@@ -40,3 +40,19 @@ const frameworks = [
  *    para agregar una nueva fila con estos datos al cuerpo de la tabla HTML.
  */
 
+frameworks.forEach(frameworkStr => {
+  // Divide la cadena en partes y elimina espacios en blanco
+  const [name, release, users, popularity] = frameworkStr.split('|').map(part => part.trim());
+
+  // Crea el objeto con las propiedades requeridas
+  const frameworkObj = {
+    frameworkName: name,
+    releaseDate: release,
+    usersName: users,
+    popularityPercentage: popularity
+  };
+
+  // Agrega la fila a la tabla
+  addRow(frameworkObj, "data-frameworks");
+});
+
